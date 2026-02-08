@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="dash-container">
+
+    <!-- HEADER -->
+    <header class="dash-header">
+        <h2><i class="fa-solid fa-user-heart"></i> Patient Dashboard</h2>
+        <a href="{{ url_for('auth.logout') }}" class="logout">
+            <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </a>
+    </header>
+
+    <!-- CARDS -->
+    <div class="cards">
+
+        <!-- MEDICAL PROFILE -->
+        <div class="card animate">
+            <h3><i class="fa-solid fa-notes-medical"></i> Medical Profile</h3>
+
+            {% if patient %}
+                <p><b>Blood Group:</b> {{ patient.blood_group }}</p>
+                <p><b>Age:</b> {{ patient.age }}</p>
+                <p><b>Allergies:</b> {{ patient.allergies }}</p>
+                <p><b>Chronic Diseases:</b> {{ patient.chronic_diseases }}</p>
+                <p><b>Emergency Contact:</b> {{ patient.emergency_contact }}</p>
+            {% else %}
+                <p>No medical profile found</p>
+            {% endif %}
+
+            <a class="btn" href="{{ url_for('patient.profile') }}">Update Profile</a>
+        </div>
+
+        <!-- MEDICAL RECORDS -->
+        <div class="card animate delay">
+            <h3><i class="fa-solid fa-file-medical"></i> Medical Records</h3>
+            <p>Upload & view your medical reports securely.</p>
+
+            <a class="btn" href="{{ url_for('patient.upload_record') }}">
+                View / Upload Records
+            </a>
+        </div>
+
+        <!-- EMERGENCY -->
+        <div class="card emergency animate delay2">
+            <h3><i class="fa-solid fa-triangle-exclamation"></i> Emergency Info</h3>
+            <p>Quick access to critical medical details.</p>
+
+            <a class="btn emergency-btn" href="{{ url_for('patient.emergency') }}">
+                View Emergency Card
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Medical Records</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/records.css') }}">
+</head>
+<body>
+
+<div class="records-container">
+
+    <div class="records-card animate">
+        <h2>
+            <i class="fa-solid fa-file-medical"></i>
+            Upload Medical Records
+        </h2>
+
+        <p class="subtitle">
+            Upload your medical reports securely (PDF / JPG / PNG)
+        </p>
+
+        <!-- UPLOAD FORM -->
+        <form method="POST" enctype="multipart/form-data">
+
+            <div class="upload-box">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+                <p>Select a medical report</p>
+
+                <input type="file"
+                       name="record"
+                       accept=".pdf,.jpg,.jpeg,.png"
+                       required>
+            </div>
+
+            <button type="submit" class="btn upload">
+                <i class="fa-solid fa-upload"></i> Upload Record
+            </button>
+        </form>
+
+        <!-- 📂 VIEW UPLOADED RECORDS -->
+        {% if records %}
+        <div class="records-list">
+            <h3>Your Uploaded Records</h3>
+
+            {% for file in records %}
+                <div class="record-item">
+                    {% if file.endswith('.pdf') %}
+                        <i class="fa-solid fa-file-pdf pdf"></i>
+                        <a href="{{ url_for('static', filename='uploads/' ~ file) }}"
+                           target="_blank">{{ file }}</a>
+                    {% else %}
+                        <img src="{{ url_for('static', filename='uploads/' ~ file) }}"
+                             alt="record image">
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <a href="{{ url_for('patient.dashboard') }}" class="btn back">
+            <i class="fa-solid fa-arrow-left"></i> Back to Dashboard
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

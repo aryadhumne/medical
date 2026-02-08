@@ -1,0 +1,46 @@
+/* PAGE BACKGROUND IMAGE */
+body {
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+        url("../images/bg5.jpeg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* GRID FIX */
+.full-width {
+    grid-column: span 2;
+}
+
+/* CARD CONTENT */
+.card p {
+    margin: 6px 0;
+    color: #333;
+}
+
+.card b {
+    color: #061f45;
+}
+
+/* EMPTY STATE */
+.empty {
+    color: #a94442;
+    font-style: italic;
+}
+
+/* ACTION BUTTON */
+.action-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 16px;
+    background: #0b5ed7;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.action-btn:hover {
+    background: #061f45;
+}

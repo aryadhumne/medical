@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/patient.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+
+        <header>
+            <h1>Welcome, {{ user.name }}!</h1>
+            <p>Role: {{ user.role }} | Email: {{ user.email }}</p>
+            <a href="/logout" class="logout-btn">Logout</a>
+        </header>
+
+        <section class="medical-history">
+            <h2>Medical Profile</h2>
+            <table class="profile-table">
+                <tr>
+                    <th>Blood Group</th>
+                    <td>{{ user.blood_group or 'N/A' }}</td>
+                </tr>
+                <tr>
+                    <th>Age</th>
+                    <td>{{ user.age or 'N/A' }}</td>
+                </tr>
+                <tr>
+                    <th>Allergies</th>
+                    <td>{{ user.allergies or 'N/A' }}</td>
+                </tr>
+                <tr>
+                    <th>Chronic Diseases</th>
+                    <td>{{ user.chronic_diseases or 'N/A' }}</td>
+                </tr>
+                <tr>
+                    <th>Emergency Contact</th>
+                    <td>{{ user.emergency_contact or 'N/A' }}</td>
+                </tr>
+            </table>
+
+            <a href="/patient/update" class="update-btn">Update Medical Profile</a>
+        </section>
+
+    </div>
+</body>
+</html>

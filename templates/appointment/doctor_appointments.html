@@ -1,0 +1,12 @@
+<h2>My Appointments</h2>
+
+{% for a in appointments %}
+<div style="border:1px solid #ccc; padding:10px; margin:10px 0">
+    <p><b>Date:</b> {{ a.appointment_date }}</p>
+    <p><b>Time:</b> {{ a.appointment_time }}</p>
+    <p><b>Reason:</b> {{ a.reason }}</p>
+    <p><b>Status:</b> {{ a.status }}</p>
+</div>
+{% else %}
+<p>No appointments yet</p>
+{% endfor %}

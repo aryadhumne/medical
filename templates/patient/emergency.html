@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emergency Medical Info</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/emergency.css') }}">
+</head>
+<body>
+
+<div class="emergency-container">
+
+    <div class="emergency-card animate">
+        <h2>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            Emergency Medical Info
+        </h2>
+
+        {% if patient %}
+        <div class="info-box">
+            <p>
+                <i class="fa-solid fa-droplet"></i>
+                <b>Blood Group:</b>
+                <span>{{ patient.blood_group }}</span>
+            </p>
+
+            <p>
+                <i class="fa-solid fa-allergies"></i>
+                <b>Allergies:</b>
+                <span>{{ patient.allergies }}</span>
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                <b>Emergency Contact:</b>
+                <span>{{ patient.emergency_contact }}</span>
+            </p>
+        </div>
+        {% else %}
+            <p class="no-data">No emergency data available</p>
+        {% endif %}
+
+        <a href="{{ url_for('patient.dashboard') }}" class="btn back">
+            <i class="fa-solid fa-arrow-left"></i> Back to Dashboard
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

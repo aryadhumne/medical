@@ -1,0 +1,104 @@
+/* ---------- Page Background ---------- */
+body.doctor-bg {
+    background: url("../images/doctor-bg.jpg") no-repeat center center / cover;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* ---------- Dashboard Card ---------- */
+.dashboard-card {
+    width: 95%;
+    max-width: 1100px;
+    padding: 30px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+}
+
+/* ---------- Title ---------- */
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #198754;
+    font-weight: 600;
+}
+
+/* ---------- Table ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+}
+
+/* ---------- Table Header ---------- */
+th {
+    background-color: #198754;
+    color: #ffffff;
+    padding: 14px;
+    font-size: 15px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* ---------- Table Data ---------- */
+td {
+    padding: 12px;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* ---------- Hover ---------- */
+tr:hover td {
+    background-color: #f2fbf6;
+}
+
+/* ---------- Action Buttons ---------- */
+td a {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin: 0 4px;
+    display: inline-block;
+    transition: 0.25s ease;
+}
+
+/* Approve */
+.approve-btn {
+    background-color: #198754;
+    color: white;
+}
+
+/* Reject */
+.reject-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+td a:hover {
+    opacity: 0.85;
+}
+
+/* ---------- Empty State ---------- */
+.no-data {
+    padding: 20px;
+    text-align: center;
+    font-size: 15px;
+    color: #666;
+}

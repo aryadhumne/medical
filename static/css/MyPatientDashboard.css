@@ -1,0 +1,64 @@
+body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+
+    /* Background image + gradient overlay */
+    background:
+        linear-gradient(
+            rgba(137, 247, 254, 0.85),
+            rgba(102, 166, 255, 0.85)
+        ),
+        url("../images/bg5.jpeg") no-repeat center center fixed;
+
+    background-size: cover;
+}
+
+/* DASHBOARD */
+.dashboard-container {
+    width: 80%;
+    margin: auto;
+    animation: fadeIn 1s ease-in;
+}
+
+h2 {
+    text-align: center;
+    color: #fff;
+}
+
+/* CARD */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    animation: slideUp 0.8s ease;
+}
+
+/* ACTION BUTTONS */
+.actions a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 20px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.actions a:hover {
+    transform: scale(1.1);
+    background: #2e7d32;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from { opacity: 0 }
+    to { opacity: 1 }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(40px); opacity: 0 }
+    to { transform: translateY(0); opacity: 1 }
+}

@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* LOGIN BACKGROUND */
+body.login-bg {
+    background: url("../images/bg3.jpeg") no-repeat center center/cover;
+}
+
+/* REGISTER BACKGROUND */
+body.register-bg {
+    background: url("../images/bg2.jpeg") no-repeat center center/cover;
+}
+
+/* Card */
+.auth-card {
+    width: 380px;
+    padding: 30px;
+    border-radius: 16px;
+
+    /* 🔹 lighter glass effect */
+    background: rgba(255, 255, 255, 0.30);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow: 0 20px 40px rgba(85, 115, 117, 0.35);
+    color: #041d1f;
+
+    animation: fadeSlide 0.7s ease;
+}
+
+/* Headings */
+.auth-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0f3f47;
+}
+
+.auth-card input,
+.auth-card select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+
+    border: none;
+    border-radius: 8px;
+
+    background: rgba(255,255,255,0.95);
+    font-size: 14px;
+}
+
+.auth-card input:focus,
+.auth-card select:focus {
+    outline: none;
+    border: 1px solid #0b1f3c;
+}
+
+/* Button */
+.auth-card button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+
+    background: #0b5ed7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.auth-card button:hover {
+    background: #061f45;
+    transform: scale(1.03);
+}
+
+/* Links text */
+.auth-card p {
+    text-align: center;
+    margin-top: 15px;
+    color: #0a1f44;
+}
+
+/* 🔹 Dark navy blue links */
+.auth-card a {
+    color: #061f45;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-card a:hover {
+    text-decoration: underline;
+}
+
+/* Flash messages */
+.flash {
+    background: #ffe0e0;
+    color: #b30000;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Animation */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
