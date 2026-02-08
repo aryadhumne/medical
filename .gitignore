@@ -1,20 +1,29 @@
-# Ignore system files 
-*.log 
-*.tmp 
-*.bak 
-*.swp 
-.DS_Store 
-Thumbs.db 
-# Ignore OS folders 
-AppData/ 
-Desktop.ini 
-# Ignore IDE folders 
-.vscode/ 
-.idea/ 
-*.iml 
-# Ignore build/output folders 
-bin/ 
-build/ 
-out/ 
-# Ignore OneDrive extras 
-*.lnk 
+# Ignore system files
+*.log
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+
+# Ignore OS folders
+AppData/
+Desktop.ini
+
+# Ignore IDE folders
+.vscode/
+.idea/
+*.iml
+
+# Ignore build/output folders
+bin/
+build/
+out/
+
+# Ignore OneDrive extra folders
+*.lnk
+*.android/
+*.gradle/
+*.m2/
+*.python_history
+*.idlerc/
